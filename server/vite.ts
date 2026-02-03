@@ -31,8 +31,18 @@ export async function setupVite(server: Server, app: Express) {
 
   app.use(vite.middlewares);
 
-  app.get("*", async (req, res, next) => {
+  app.use(async (req, res, next) => {
     const url = req.originalUrl;
+
+    // Only handle GET requests for HTML
+    if (req.method !== 'GET') {
+      return next();
+    }
+
+    // Skip if it's an API route or asset
+    if (url.startsWith('/api') || url.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/)) {
+      return next();
+    }
 
     try {
       const clientTemplate = path.resolve(
