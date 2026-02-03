@@ -79,6 +79,8 @@ creator-template/
 
 ## Deploying to Vercel
 
+This project is configured to deploy as a static site to Vercel. The contact form works client-side only (no backend required).
+
 ### Prerequisites for Vercel Deployment
 
 1. A [Vercel account](https://vercel.com/signup)
