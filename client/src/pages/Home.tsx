@@ -203,7 +203,7 @@ function Portfolio() {
       title: "Launch Strategy",
       stat: "10k Followers in 3mo",
       // modern office tech
-      image: "https://images.unsplash.com/photo-1531297461136-82af322efb00?w=800&auto=format&fit=crop&q=60"
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=60"
     },
     {
       category: "Coffee Shop",
