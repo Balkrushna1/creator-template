@@ -31,16 +31,22 @@ export async function setupVite(server: Server, app: Express) {
 
   app.use(vite.middlewares);
 
+  // Fallback to serve index.html for client-side routing
   app.use(async (req, res, next) => {
     const url = req.originalUrl;
 
-    // Only handle GET requests for HTML
+    // Only handle GET requests
     if (req.method !== 'GET') {
       return next();
     }
 
-    // Skip if it's an API route or asset
-    if (url.startsWith('/api') || url.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/)) {
+    // Skip API routes
+    if (url.startsWith('/api')) {
+      return next();
+    }
+
+    // Skip assets that Vite should have handled
+    if (url.includes('.') && !url.endsWith('.html')) {
       return next();
     }
 
