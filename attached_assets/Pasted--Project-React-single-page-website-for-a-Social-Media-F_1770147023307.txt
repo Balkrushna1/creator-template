@@ -1,0 +1,27 @@
+**Project:** React single-page website for a Social Media Freelancer & Content Creator.
+
+**Objective:** Design a modern, stylish one-page site that converts visitors into clients. No backend or database (static site for easy Vercel deployment).
+
+**Design:** 
+- Use a clean, responsive layout with a vibrant color scheme suited to a social media marketing theme (e.g. bold accent colors on a neutral background). 
+- Include smooth scrolling navigation (menu links to each section) and ensure mobile-friendly responsiveness.
+
+**Sections & Content:**
+1. **Hero Section:** Eye-catching headline that highlights the freelancer’s value (e.g. “I Grow Your Social Media, So You Can Grow Your Business”). Subtext with brief intro. Prominent CTA button (e.g. “Book a Call” or “DM on Instagram”) that links to contact section or external scheduling link. Attractive hero image or graphic (placeholder OK) that conveys social media theme.
+2. **About Me:** Brief bio of the freelancer – background, expertise in social media/content creation. Emphasize experience (years in industry, notable achievements) and a friendly tone that builds trust. Include a profile photo (placeholder image) for a personal touch.
+3. **Services:** List of services offered with short descriptions. Include all key offerings (Instagram growth, YouTube video editing, content strategy, etc.). For each service, explain the benefit to the client. (No actual backend functionality needed, just static descriptions.)
+4. **Portfolio/Case Studies:** Gallery or section showcasing previous work. For each project, have an image (placeholder) and a brief description of what was done and the results (e.g. metrics like follower increase or engagement rate). Show 3-6 examples of successful campaigns or content pieces.
+5. **Testimonials:** Section with 2-3 client testimonials (use sample quotes). Each testimonial has a client name and maybe company or title. Use a stylized quote design (e.g., italic text or blockquote style) to highlight positive feedback.
+6. **Pricing:** Outline service packages or starting prices. Could be a simple pricing table with package names (Basic/Standard/Premium) and bullet points of what’s included in each, plus price. If exact pricing is not provided, indicate “Contact for quote” on a CTA button.
+7. **FAQs:** List a few frequently asked questions with answers. Use an accordion style (click to reveal answer) if possible. Include common queries like “How do we get started?”, “What is your pricing model?”, “Which platforms do you work with?”, etc.
+8. **Contact:** A contact form (Name, Email, Message) without backend (can use mailto link on submit or just design the form UI). Also list direct contact info: freelancer’s email and links/icons for social media (Instagram, LinkedIn). End with a final call-to-action text encouraging the visitor to get in touch.
+
+**Additional Requirements:** 
+- Site must be fully responsive (works on desktop, tablet, mobile). Use CSS media queries or a responsive framework for layout.
+- Use modern CSS styling (flexbox/grid for layout, hover effects on buttons, etc.) to achieve a sleek look. 
+- Include comments in code for clarity where appropriate.
+- No external data or API calls needed; use placeholder content and images that can be easily replaced.
+- Ensure the code is organized (components for each section in React) and easy to maintain.
+
+**Goal:** The final website should impress visitors with a **professional design**, clearly communicate the freelancer’s **services and success**, and drive them to **take action (hire/contact the freelancer)**.
+
