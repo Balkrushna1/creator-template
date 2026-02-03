@@ -24,26 +24,27 @@ export async function setupVite(server: Server, app: Express) {
     },
   });
 
+  // Use Vite's middleware
   app.use(vite.middlewares);
 
-  // HTML fallback for SPA routing - must be last
-  app.use((req, res, next) => {
-    const url = req.originalUrl;
-
-    // Let Vite handle its own requests
+  // Fallback to index.html for any unmatched routes (SPA)
+  app.use(async (req, res, next) => {
+    // Skip if response already sent
     if (res.headersSent) {
-      return;
+      return next();
     }
+
+    const url = req.originalUrl;
 
     try {
       const htmlPath = path.resolve(viteConfig.root as string, "index.html");
       let html = fs.readFileSync(htmlPath, "utf-8");
-      vite.transformIndexHtml(url, html).then(transformedHtml => {
-        res.status(200).set({ "Content-Type": "text/html" }).end(transformedHtml);
-      }).catch(e => {
-        vite.ssrFixStacktrace(e as Error);
-        next(e);
-      });
+      html = await vite.transformIndexHtml(url, html);
+      
+      // Explicitly set headers to prevent download
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
+      res.removeHeader("Content-Disposition");
+      res.status(200).send(html);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
